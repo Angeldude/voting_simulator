@@ -14,5 +14,4 @@ class Creator
       Voter.new(@name, @affiliation)
     end
   end
-
 end
