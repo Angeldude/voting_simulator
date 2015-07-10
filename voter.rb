@@ -3,9 +3,10 @@ class Voter
   def initialize(name, politics)
     @name = name
     @politics = politics
+    @vote = false
   end
 
-  def voted
-    @vote = false
+  def voted?
+    @vote
   end
 end

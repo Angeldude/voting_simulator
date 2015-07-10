@@ -15,11 +15,6 @@ attr_reader :rep, :dem
 
 end
 
-count = Counter.new
-if convince and sandy.party.include?("Republican")
-  bill.voted = true
-  count.inc_rep
-else
-  bill.voted = true
-  count.inc_dem
-end
+# is candidate really required to visit all voters?
+# how to change voted to true
+# iterate through list how?
