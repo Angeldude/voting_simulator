@@ -1,16 +1,6 @@
 class Counter
 attr_reader :rep, :dem
   def initialize
-    @rep = 1
-    @dem = 1
-  end
-
-  def inc_rep
-    @rep += 1
-  end
-
-  def inc_dem
-    @dem += 1
   end
 
 end
