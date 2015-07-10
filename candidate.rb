@@ -14,6 +14,7 @@ class Candidate < Voter
 
   private
 
+  # determines voter preference
   def stats(voter)
     case @party
     when "Republican"
@@ -83,11 +84,3 @@ class Candidate < Voter
     end
   end
 end
-
-dummy = Voter.new("Tester", "Libertarian")
-bill = Candidate.new("Harold", "Republican")
-
-sandy = Candidate.new("Sandy", "Democrat")
-
-p bill.stump(dummy)
-p sandy.stump(dummy)
