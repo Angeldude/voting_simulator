@@ -15,7 +15,7 @@ class Campaign
       if bool and temp.party.include?("Republican") and not item.voted?
         item.vote = true
         counter.inc_rep
-      else
+      elsif not item.voted?
         item.vote = true
         counter.inc_dem
       end
@@ -29,8 +29,8 @@ Candidate.new("Laura Graham", "Democrat")
 ]
 
 voters = [
-  Voter.new("Amy", "Progressive"),
-  Voter.new("Burt","Libertarian"),
+  Voter.new("Amy", "Libertarian"),
+  Voter.new("Burt","Progressive"),
   Voter.new("Charlie", "Independent"),
   Voter.new("Darlene", "Conservative"),
   Voter.new("Edgar", "Massachusetts Democrat"),
