@@ -1,14 +1,15 @@
 require './voter'
 
 class Candidate < Voter
-  attr_accessor :party, :name
+  attr_accessor :party, :name, :vote
   def initialize(name, party)
     @name = name
     @party = party
+    @vote = true
   end
 
   # outputs a bool value for chances a voter will vote for a particular candidate
-  def stump(voter)
+  def stump_speech(voter)
     stats(voter)
   end
 
