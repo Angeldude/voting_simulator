@@ -8,6 +8,9 @@ class Campaign
     @voters = voters
   end
 
-  def vote_sim(counter)
-  end
+  # def vote_sim
+  # end
+  #
+  # def outcome
+  # end
 end

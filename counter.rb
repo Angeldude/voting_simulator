@@ -3,6 +3,9 @@ attr_reader :rep, :dem
   def initialize
   end
 
+  def tally
+  end
+
 end
 
 # is candidate really required to visit all voters?
