@@ -1,5 +1,4 @@
 require './candidate'
-require './counter'
 
 class Campaign
 
@@ -27,31 +26,31 @@ class Campaign
     when "Republican"
       if voter.politics.include?("Libertarian")
         if rand > 0.1
-          true
+          candidate.counter += 1
         else
           false
         end
       elsif voter.politics.include?("Conservative")
         if rand > 0.25
-          true
+          candidate.counter += 1
         else
           false
         end
       elsif voter.politics.include?("Independent")
         if rand > 0.50
-          true
+          candidate.counter += 1
         else
           false
         end
       elsif voter.politics.include?("Progressive")
         if rand > 0.75
-          true
+          candidate.counter += 1
         else
           false
         end
       else
         if rand > 0.90
-          true
+          candidate.counter += 1
         else
           false
         end
@@ -59,31 +58,31 @@ class Campaign
     when "Democrat"
       if voter.politics.include?("Libertarian")
         if rand < 0.1
-          true
+          candidate.counter += 1
         else
           false
         end
       elsif voter.politics.include?("Conservative")
         if rand < 0.25
-          true
+          candidate.counter += 1
         else
           false
         end
       elsif voter.politics.include?("Independent")
         if rand < 0.50
-          true
+          candidate.counter += 1
         else
           false
         end
       elsif voter.politics.include?("Progressive")
         if rand < 0.75
-          true
+          candidate.counter += 1
         else
           false
         end
       else
         if rand < 0.90
-          true
+          candidate.counter += 1
         else
           false
         end
