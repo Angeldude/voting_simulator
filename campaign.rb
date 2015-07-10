@@ -23,10 +23,10 @@ class Campaign
   end
 end
 
-bill = Candidate.new("Bill Grabey", "Republican")
-laura = Candidate.new("Laura Graham", "Democrat")
-
-candidates = [] << bill << laura
+ candidates = [
+ Candidate.new("Bill Grabey", "Republican"),
+Candidate.new("Laura Graham", "Democrat")
+]
 
 voters = [
   Voter.new("Amy", "Progressive"),
