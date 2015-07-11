@@ -205,27 +205,28 @@ class Menu
       (C)reate, (U)pdate, (L)ist, (V)ote, or (Q)uit?
       Enter only the first letter.
       END
-      18.times do
+      10.times do
         puts
       end
       # user options for the simulation
       case gets.chomp.upcase
       when "DEBUG"
         @candidates = [
-          Candidate.new("Harold Far", "Republican"),
-          Candidate.new("Fara Horde", "Democrat"),
-          Candidate.new("Billy Graham", "Democrat"),
-          Candidate.new("Frar Tucke", "Republican"),
-          Candidate.new("Cara Bingo", "Republican"),
-          Candidate.new("Lourdes Mol", "Democrat")
+          Candidate.new("Chris", "Republican"),
+          Candidate.new("Alec", "Democrat"),
+          Candidate.new("Robert", "Democrat"),
+          Candidate.new("Paul", "Democrat"),
+          Candidate.new("Adam", "Republican"),
+          Candidate.new("Juan", "Republican"),
+          Candidate.new("Juvenal", "Democrat")
         ]
         @voters = [
-          Voter.new("Jona", "Libertarian"),
-          Voter.new("Sally", "Progressive"),
-          Voter.new("Billy", "Independent"),
-          Voter.new("Sarah", "Conservative"),
-          Voter.new("Gorb Gorb", "Massachusetts Democrat"),
-          Voter.new("Sauron", "Libertarian")
+          Voter.new("Ravi", "Libertarian"),
+          Voter.new("Jeff", "Progressive"),
+          Voter.new("Stevie", "Independent"),
+          Voter.new("Joann", "Conservative"),
+          Voter.new("Mashon", "Massachusetts Democrat"),
+          Voter.new("Patrick", "Libertarian")
         ]
       when "C"
         create
