@@ -13,7 +13,7 @@ class Menu
     when "C"
       candi = true
       puts "Name?"
-      name = gets.chomp.capitalize
+      name = gets.chomp
       puts "Party? (D)emocrat or (R)epublican"
       case gets.chomp.upcase
       when "D"
@@ -61,6 +61,10 @@ class Menu
   end
 
   def update
+    puts "Whose name would you like to update?"
+    name = gets.chomp
+    puts "New name?"
+    new_name = gets.chomp
   end
 
   def list
@@ -155,26 +159,5 @@ class Menu
   end
 end
 #
-# menu = Menu.new
-# menu.start_menu
-
-# candidates = [
-#   Candidate.new("Harold Far", "Republican"),
-#   Candidate.new("Fara Horde", "Democrat"),
-#   Candidate.new("Billy Graham", "Democrat"),
-#   Candidate.new("Frar Tucke", "Republican"),
-#   Candidate.new("Cara Bingo", "Republican"),
-#   Candidate.new("Lourdes Mol", "Democrat")
-# ]
-# voters = [
-#   Voter.new("Jona", "Libertarian"),
-#   Voter.new("Sally", "Progressive"),
-#   Voter.new("Billy", "Independent"),
-#   Voter.new("Sarah", "Conservative"),
-#   Voter.new("Gorb Gorb", "Massachusetts Democrat"),
-#   Voter.new("Sauron", "Libertarian")
-# ]
-#
-# test_campaign = Campaign.new(candidates, voters)
-# test_campaign.all_stumps
-# test_campaign.outcome
+menu = Menu.new
+menu.start_menu
