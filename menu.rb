@@ -51,6 +51,7 @@ class Menu
     end
     if name.nil? or affiliation.nil?  #make sure not to add to array
       puts "Nothing was entered."
+      sleep(1)
     elsif candi
       @candidates.push(Candidate.new(name, affiliation))
     else
@@ -61,22 +62,29 @@ class Menu
   def list
     if @candidates.empty?
       puts "There are no candidates."
+      puts
+      sleep(3)
     else
       puts "List of candidates are:"
       @candidates.each do |candidate|
         puts "#{candidate.name}, party: #{candidate.party}"
-        sleep(1)
+        sleep(3)
       end
     end
+    puts
 
     if @voters.empty?
       puts "There are no voters."
+      puts
+      sleep(2)
     else
       puts "List of voters are:"
       @voters.each do |voter|
         puts "#{voter.name}, affiliation: #{voter.politics}"
+        sleep(3)
       end
     end
+    puts
   end
 
   def start_menu
@@ -89,6 +97,9 @@ class Menu
       (C)reate, (U)pdate, (L)ist, (V)ote, or (Q)uit?
       Enter only the first letter.
       END
+      15.times do
+        puts
+      end
       # user options for the simultation
       case gets.chomp.upcase
       when "C"
