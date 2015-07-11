@@ -1,16 +1,12 @@
 require './voter'
 
 class Candidate < Voter
-  @@next_id = 0
   attr_accessor :name, :party, :vote_counter
-  attr_reader :id
 
   def initialize(name, party)
     @name = name
     @party = party
     @vote_counter = 1
-    @id = @@next_id
-    @@next_id += 1
   end
   def listen(candidate)
     puts "#{name}: #{candidate.name} is pure trash!"

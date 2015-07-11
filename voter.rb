@@ -1,14 +1,11 @@
 class Voter
-  @@next_id = 0
   attr_accessor :name, :politics, :party
-  attr_reader :voted, :id
+  attr_reader :voted
 
   def initialize(name, politics)
     @name = name
     @politics = politics
     @voted = false
-    @id = @@next_id
-    @@next_id += 1
   end
 
   def listen(candidate) #campaign class will use this

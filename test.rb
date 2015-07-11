@@ -12,7 +12,7 @@ test_people.push(charles)
 test_people.push(livia)
 
 test_people.each do |n|
-  puts n.id
+  puts "#{n.name} and #{n.id} and #{n}"
 end
 
 # puts "Whose name would you like to update?"
