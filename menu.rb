@@ -25,7 +25,7 @@ class Menu
       end
     when "V"
       puts "Name?"
-      name = gets.chomp.capitalize
+      name = gets.chomp
       puts "Politics? (P)rogressive, (C)onservative,"
       puts "(L)ibertarian, (M)assachusetts Democrat, or (I)ndependent"
       case gets.chomp.upcase
@@ -58,6 +58,27 @@ class Menu
     end
   end
 
+  def list
+    if @candidates.empty?
+      puts "There are no candidates."
+    else
+      puts "List of candidates are:"
+      @candidates.each do |candidate|
+        puts "#{candidate.name}, party: #{candidate.party}"
+        sleep(1)
+      end
+    end
+
+    if @voters.empty?
+      puts "There are no voters."
+    else
+      puts "List of voters are:"
+      @voters.each do |voter|
+        puts "#{voter.name}, affiliation: #{voter.politics}"
+      end
+    end
+  end
+
   def start_menu
     quit_sim = true
     while quit_sim
@@ -77,7 +98,7 @@ class Menu
       when "U"
 
       when "L"
-
+        list
       when "V"
 
       when "Q"
