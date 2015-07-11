@@ -59,6 +59,9 @@ class Menu
     end
   end
 
+  def update
+  end
+
   def list
     if @candidates.empty?
       puts "There are no candidates."
@@ -87,7 +90,7 @@ class Menu
     puts
   end
 
-  def update
+  def vote
   end
 
   def start_menu
@@ -107,14 +110,12 @@ class Menu
       case gets.chomp.upcase
       when "C"
         create
-        # p @candidates
-        # p @voters
       when "U"
-
+        update
       when "L"
         list
       when "V"
-
+        vote
       when "Q"
         puts "Have a good day!"
         quit_sim = false
