@@ -9,7 +9,8 @@ class Candidate < Voter
     @vote_counter = 1
   end
   def listen(candidate)
-    puts "#{candidate.name} is pure trash!"
+    puts "#{name}: #{candidate.name} is pure trash!"
+    puts
   end
 
   def stump_speech(voter) # campaign class will call this and interlock with

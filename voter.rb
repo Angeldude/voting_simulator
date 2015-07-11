@@ -12,11 +12,13 @@ class Voter
   def listen(candidate) #campaign class will use this
     if not @voted
       if candidate.stump_speech(self)
-        puts "I am convinced, #{candidate.name} gets my vote!"
+        puts "#{name}: I am convinced, #{candidate.name} gets my vote!"
+        puts
         candidate.vote_counter += 1
         @voted =true
       else
-        puts "Don't think so, I'll go on to the next."
+        puts "#{name}: Don't think so, I'll go on to the next."
+        puts
       end
     end
   end
