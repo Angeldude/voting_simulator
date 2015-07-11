@@ -1,9 +1,29 @@
 class Campaign
+  attr_reader :voters
 
   def initialize(candidates, voters)
     @candidates = candidates
+    @notvote = []
     @voters = voters
     @outcome = []
+  end
+
+  def not_vote
+    @voters.each do |voter|
+      if not voter.voted
+        @notvote.push(voter)
+      end
+    end
+    @notvote
+  end
+
+  def finish_the_job(voters, candidates)
+    if not voters.empty?
+      voters.each do |voter|
+        candidates.sample.vote_counter += 1
+        voter.voted = true
+      end
+    end
   end
 
   def outcome

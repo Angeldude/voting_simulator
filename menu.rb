@@ -106,6 +106,8 @@ class Menu
     else
       campaign = Campaign.new(@candidates, @voters)
       campaign.all_stumps
+      finish = campaign.not_vote
+      campaign.finish_the_job(finish, @candidates)
       campaign.outcome
       puts "Simulation has ended."
       sleep(2)
