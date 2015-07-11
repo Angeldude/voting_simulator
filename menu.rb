@@ -144,10 +144,6 @@ class Menu
     end
   end
 end
-
+#
 # menu = Menu.new
 # menu.start_menu
-bop = Candidate.new("Angel", "Democrat")
-fop = Voter.new("Raaaan", "Libertarian")
-
-fop.listen(bop)

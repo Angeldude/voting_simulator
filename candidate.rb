@@ -1,15 +1,15 @@
 require './voter'
 
 class Candidate < Voter
-  attr_accessor :name, :party
+  attr_accessor :name, :party, :vote_counter
 
   def initialize(name, party)
     @name = name
     @party = party
     @vote_counter = 1
   end
-  def listen
-    puts "This candidate is trash!"
+  def listen(candidate)
+    puts "#{candidate.name} is pure trash!"
   end
 
   def stump_speech(voter)
