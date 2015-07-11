@@ -1,5 +1,4 @@
-# voting_simulator
-Voting!
+#Voting!
 ----
 voting simulator for wyncode class
 
