@@ -10,6 +10,7 @@ class Voter
   def listen(candidate)
     if candidate.stump_speech(self)
       puts "test"
+      candidate.vote_counter += 1
     else
       puts "fail"
     end
