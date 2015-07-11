@@ -100,7 +100,7 @@ class Menu
       15.times do
         puts
       end
-      # user options for the simultation
+      # user options for the simulation
       case gets.chomp.upcase
       when "C"
         create
