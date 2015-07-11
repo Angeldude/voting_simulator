@@ -87,6 +87,9 @@ class Menu
     puts
   end
 
+  def update
+  end
+
   def start_menu
     quit_sim = true
     while quit_sim
