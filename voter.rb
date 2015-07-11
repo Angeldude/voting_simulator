@@ -7,4 +7,12 @@ class Voter
     @party=""
   end
 
+  def listen(candidate)
+    if candidate.stump_speech(self)
+      puts "test"
+    else
+      puts "fail"
+    end
+  end
+
 end
