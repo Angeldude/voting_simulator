@@ -63,8 +63,12 @@ class Menu
   def update
     puts "Whose name would you like to update?"
     name = gets.chomp
-    puts "New name?"
-    new_name = gets.chomp
+    puts "Would you like to (d)elete or (m)odify the person?"
+    case gets.chomp.downcase
+    when "d"
+    when "m"
+    end
+
   end
 
   def list
