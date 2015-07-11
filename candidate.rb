@@ -12,8 +12,8 @@ class Candidate < Voter
     puts "#{candidate.name} is pure trash!"
   end
 
-  def stump_speech(voter)
-    stats(voter)
+  def stump_speech(voter) # campaign class will call this and interlock with
+    stats(voter)          # voter class
   end
 
   private

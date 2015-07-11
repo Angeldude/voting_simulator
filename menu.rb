@@ -1,4 +1,5 @@
 require './candidate'
+require './campaign'
 
 class Menu
   def initialize
@@ -92,6 +93,8 @@ class Menu
   end
 
   def vote
+    campaign = Campaign.new(@candidates, @voters)
+    campaign.stump_platform
   end
 
   def start_menu
@@ -147,3 +150,24 @@ end
 #
 # menu = Menu.new
 # menu.start_menu
+
+candidates = [
+  Candidate.new("Harold Far", "Republican"),
+  Candidate.new("Fara Horde", "Democrat"),
+  Candidate.new("Billy Graham", "Democrat"),
+  Candidate.new("Frar Tucke", "Republican"),
+  Candidate.new("Cara Bingo", "Republican"),
+  Candidate.new("Lourdes Mol", "Democrat")
+]
+voters = [
+  Voter.new("Jona", "Libertarian"),
+  Voter.new("Sally", "Progressive"),
+  Voter.new("Billy", "Independent"),
+  Voter.new("Sarah", "Conservative"),
+  Voter.new("Gorb Gorb", "Massachusetts Democrat"),
+  Voter.new("Sauron", "Libertarian")
+]
+
+test_campaign = Campaign.new(candidates, voters)
+test_campaign.stump_platform
+test_campaign.outcome

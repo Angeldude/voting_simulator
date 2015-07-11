@@ -9,7 +9,7 @@ class Voter
     @voted = false
   end
 
-  def listen(candidate)
+  def listen(candidate) #campaign class will use this
     if not @voted
       if candidate.stump_speech(self)
         puts "I am convinced, #{candidate.name} gets my vote!"
