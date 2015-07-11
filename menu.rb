@@ -87,6 +87,7 @@ class Menu
         sleep(3)
       end
     end
+    sleep(5)
     puts
   end
 
@@ -108,6 +109,23 @@ class Menu
       end
       # user options for the simulation
       case gets.chomp.upcase
+      when "DEBUG"
+        @candidates = [
+          Candidate.new("Harold Far", "Republican"),
+          Candidate.new("Fara Horde", "Democrat"),
+          Candidate.new("Billy Graham", "Democrat"),
+          Candidate.new("Frar Tucke", "Republican"),
+          Candidate.new("Cara Bingo", "Republican"),
+          Candidate.new("Lourdes Mol", "Democrat")
+        ]
+        @voters = [
+          Voter.new("Jona", "Libertarian"),
+          Voter.new("Sally", "Progressive"),
+          Voter.new("Billy", "Independent"),
+          Voter.new("Sarah", "Conservative"),
+          Voter.new("Gorb Gorb", "Massachusetts Democrat"),
+          Voter.new("Sauron", "Libertarian")
+        ]
       when "C"
         create
       when "U"
