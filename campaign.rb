@@ -8,7 +8,7 @@ class Campaign
     @outcome = []
   end
 
-  def not_vote
+  def not_vote #sends indecisive voters into an array
     @voters.each do |voter|
       if not voter.voted
         @notvote.push(voter)
@@ -17,6 +17,7 @@ class Campaign
     @notvote
   end
 
+  # indecisive voters now randomly pick a candidate so everyone votes.
   def finish_the_job(voters, candidates)
     if not voters.empty?
       voters.each do |voter|
@@ -26,6 +27,7 @@ class Campaign
     end
   end
 
+  # lists the total votes of all candidates
   def outcome
     5.times do
       puts "CALCULATING VOTES..."
@@ -39,6 +41,7 @@ class Campaign
   end
 
   def all_stumps
+    # checks if list is empty, if not runs the platform method...
     while true
       if @candidates.empty?
         puts "All done!"
@@ -53,18 +56,20 @@ class Campaign
   private
 
   def stump_platform
+    # ...which begins the stump speeches!
     if @candidates.empty?
       puts "No more candidates left!"
     else
       puts "Let the speeches begin!"
       sleep(1)
+      # removes a candidate and mixes the rest together
       stumper = @candidates.delete(@candidates.sample)
       everyone_else = (@candidates + @voters).shuffle
       puts "#{stumper.name} is speaking!"
       sleep(2)
 
       everyone_else.each do |voter|
-        voter.listen(stumper)
+        voter.listen(stumper) # every voter/candidate has a listen method...
         sleep(1)
       end
       @outcome.push(stumper)

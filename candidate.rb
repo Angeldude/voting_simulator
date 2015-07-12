@@ -9,6 +9,7 @@ class Candidate < Voter
     @vote_counter = 1
   end
   def listen(candidate)
+    # candidates always talk down other candidates
     puts "#{name}: #{candidate.name} is pure trash!"
     puts
   end

@@ -187,10 +187,11 @@ class Menu
     else
       # many methods in the campaign class
       campaign = Campaign.new(@candidates, @voters)
-      campaign.all_stumps
-      finish = campaign.not_vote
-      campaign.finish_the_job(finish, @candidates)
-      campaign.outcome
+      campaign.all_stumps # this runs in the campaign class...
+      finish = campaign.not_vote # stores voters who were indecisive
+      campaign.finish_the_job(finish, @candidates) # all votes are in!
+      campaign.outcome # tallies the votes
+      puts
       puts "Simulation has ended."
       sleep(3)
     end
@@ -211,7 +212,7 @@ class Menu
       end
       # user options for the simulation
       case gets.chomp.upcase
-      when "DEBUG"
+      when "DEBUG" # debug mode, pre-generated list of people
         @candidates = [
           Candidate.new("Chris", "Republican"),
           Candidate.new("Alec", "Democrat"),

@@ -9,12 +9,13 @@ class Voter
   end
 
   def listen(candidate) #campaign class will use this
+    # checks if voter has voted
     if not @voted
-      if candidate.stump_speech(self)
+      if candidate.stump_speech(self) #stump speech interlocks with listen method
         puts "#{name}: I am convinced, #{candidate.name} gets my vote!"
         puts
-        candidate.vote_counter += 1
-        @voted =true
+        candidate.vote_counter += 1 # adds a vote to the candidate's counter
+        @voted =true # now the voter can no longer vote
       else
         puts "#{name}: Don't think so, I'll go on to the next."
         puts
