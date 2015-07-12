@@ -33,7 +33,8 @@ class Campaign
     end
     puts "The votes are in!"
     @outcome.each do |candidate|
-      p "#{candidate.name} has #{candidate.vote_counter}"
+      puts "#{candidate.name} has #{candidate.vote_counter}"
+      sleep(1)
     end
   end
 
@@ -59,6 +60,8 @@ class Campaign
       sleep(1)
       stumper = @candidates.delete(@candidates.sample)
       everyone_else = (@candidates + @voters).shuffle
+      puts "#{stumper.name} is speaking!"
+      sleep(2)
 
       everyone_else.each do |voter|
         voter.listen(stumper)

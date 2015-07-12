@@ -69,7 +69,7 @@ class Menu
       when "c"
         puts "Whose name would you like to delete?"
         name = gets.chomp
-        @candidates.each do |candidate|
+        @candidates.each do |candidate| #compare input with list of names
           if candidate.name.eql?(name)
             @candidates.delete(candidate)
           end
@@ -77,7 +77,7 @@ class Menu
       when "v"
         puts "Whose name would you like to delete?"
         name = gets.chomp
-        @voters.each do |voter|
+        @voters.each do |voter| #searches for name to delete, may delete duplicates
           if voter.name.eql?(name)
             @voters.delete(voter)
           end
@@ -152,7 +152,7 @@ class Menu
   end
 
 
-  def list
+  def list #simple method, iterates through list of people to print to screen
     if @candidates.empty?
       puts "There are no candidates."
       puts
@@ -181,17 +181,18 @@ class Menu
     puts
   end
 
-  def vote
+  def vote # the start of the big bad method
     if @candidates.empty? or @voters.empty?
       puts "No one around to vote!"
     else
+      # many methods in the campaign class
       campaign = Campaign.new(@candidates, @voters)
       campaign.all_stumps
       finish = campaign.not_vote
       campaign.finish_the_job(finish, @candidates)
       campaign.outcome
       puts "Simulation has ended."
-      sleep(2)
+      sleep(3)
     end
   end
 
@@ -246,6 +247,3 @@ class Menu
     end
   end
 end
-#
-menu = Menu.new
-menu.start_menu
