@@ -56,7 +56,7 @@ class Menu
     elsif candi
       @candidates.push(Candidate.new(name, affiliation)) unless name.eql?("")
     else
-      @voters.push(Voter.new(name, affiliation)) unless name.eql("")
+      @voters.push(Voter.new(name, affiliation)) unless name.eql?("")
     end
   end
 
