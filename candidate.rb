@@ -24,25 +24,25 @@ class Candidate < Voter
     def stats(voter)
       case @party
       when "Republican"
-        if voter.politics.include?("Libertarian")
+        if voter.politics.eql?("Libertarian")
           if rand > 0.1
             true
           else
             false
           end
-        elsif voter.politics.include?("Conservative")
+        elsif voter.politics.eql?("Conservative")
           if rand > 0.25
             true
           else
             false
           end
-        elsif voter.politics.include?("Independent")
+        elsif voter.politics.eql?("Independent")
           if rand > 0.50
             true
           else
             false
           end
-        elsif voter.politics.include?("Progressive")
+        elsif voter.politics.eql?("Progressive")
           if rand > 0.75
             true
           else
@@ -56,25 +56,25 @@ class Candidate < Voter
           end
         end
       when "Democrat"
-        if voter.politics.include?("Libertarian")
+        if voter.politics.eql?("Libertarian")
           if rand < 0.1
             true
           else
             false
           end
-        elsif voter.politics.include?("Conservative")
+        elsif voter.politics.eql?("Conservative")
           if rand < 0.25
             true
           else
             false
           end
-        elsif voter.politics.include?("Independent")
+        elsif voter.politics.eql?("Independent")
           if rand < 0.50
             true
           else
             false
           end
-        elsif voter.politics.include?("Progressive")
+        elsif voter.politics.eql?("Progressive")
           if rand < 0.75
             true
           else

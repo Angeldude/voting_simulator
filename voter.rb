@@ -1,6 +1,5 @@
 class Voter
-  attr_accessor :name, :politics, :party
-  attr_reader :voted
+  attr_accessor :name, :politics, :party, :voted
 
   def initialize(name, politics)
     @name = name
