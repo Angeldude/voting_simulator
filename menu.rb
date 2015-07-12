@@ -22,7 +22,7 @@ class Menu
         affiliation =  "Republican"
       else
         puts "Not a valid input."
-        sleep(2)
+        sleep 2
       end
     when "V"
       puts "Name?"
@@ -43,20 +43,20 @@ class Menu
       else
         puts "Not a valid input."
         puts
-        sleep(2)
+        sleep 2
       end
     else
       puts "Please enter only C or V"
       puts
-      sleep(2)
+      sleep 2
     end
     if name.nil? or affiliation.nil?  #make sure not to add to array
       puts "Nothing was entered."
-      sleep(1)
+      sleep 1
     elsif candi
-      @candidates.push(Candidate.new(name, affiliation))
+      @candidates.push(Candidate.new(name, affiliation)) unless name.eql?("")
     else
-      @voters.push(Voter.new(name, affiliation))
+      @voters.push(Voter.new(name, affiliation)) unless name.eql("")
     end
   end
 
@@ -105,10 +105,13 @@ class Menu
               party = "Republican"
             else
               puts "Not valid!"
+              puts
+              sleep 2
             end
-            candidate.name = new_name
-            candidate.party = party
+            candidate.name = new_name unless new_name.eql("")
+            candidate.party = party unless party.nil?
             puts "All done!"
+            sleep 2
           end
         end
 
@@ -136,18 +139,23 @@ class Menu
               politics = "Independent"
             else
               puts "Not valid!"
+              puts
+              sleep 2
             end
-            voter.name = new_name
-            voter.politics = politics
+            voter.name = new_name unless new_name.eql?("")
+            voter.politics = politics unless politics.nil?
             puts "All done!"
           end
         end
       else
         puts "Nope!"
-        sleep(2)
+        puts
+        sleep 2
       end
     else
       puts "Not a valid input."
+      puts
+      sleep 2
     end
   end
 
@@ -156,12 +164,12 @@ class Menu
     if @candidates.empty?
       puts "There are no candidates."
       puts
-      sleep(3)
+      sleep 3
     else
       puts "List of candidates are:"
       @candidates.each do |candidate|
         puts "#{candidate.name}, party: #{candidate.party}"
-        sleep(3)
+        sleep 3
       end
     end
     puts
@@ -169,15 +177,15 @@ class Menu
     if @voters.empty?
       puts "There are no voters."
       puts
-      sleep(2)
+      sleep 2
     else
       puts "List of voters are:"
       @voters.each do |voter|
         puts "#{voter.name}, affiliation: #{voter.politics}"
-        sleep(3)
+        sleep 3
       end
     end
-    sleep(5)
+    sleep 5
     puts
   end
 
@@ -196,7 +204,7 @@ class Menu
       puts "Simulation has ended."
       @candidates = Array.new # these can be commented out
       @voters = Array.new     # so names aren't wiped
-      sleep(3)
+      sleep 3
     end
   end
 
@@ -246,7 +254,7 @@ would you like to proceed?
         quit_sim = false
       else
         puts "Not a valid input."
-        sleep(2)
+        sleep 2
       end
     end
   end

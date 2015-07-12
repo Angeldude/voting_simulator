@@ -31,12 +31,12 @@ class Campaign
   def show_outcome
     5.times do
       puts "CALCULATING VOTES..."
-      sleep(1)
+      sleep 1
     end
     puts "The votes are in!"
     @outcome.each do |candidate|
       puts "#{candidate.name} has #{candidate.vote_counter}"
-      sleep(1)
+      sleep 1
     end
   end
 
@@ -59,17 +59,17 @@ class Campaign
   def stump_platform
     # ...which begins the stump speeches!
       puts "Let the speeches begin!"
-      sleep(1)
+      sleep 1
       # removes a candidate and mixes the rest together
       stumper = @politicians.delete(@politicians.sample)
       everyone_else = (@politicians + @voters).shuffle
       puts "#{stumper.name} is speaking!"
       puts
-      sleep(3)
+      sleep 3
 
       everyone_else.each do |voter|
         voter.listen(stumper) # every voter/candidate has a listen method...
-        sleep(1)
+        sleep 1
       end
       @outcome.push(stumper)
   end
