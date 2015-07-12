@@ -107,7 +107,7 @@ class Menu
               puts "Not valid!"
             end
             candidate.name = new_name
-            candidate.party = new_party
+            candidate.party = party
             puts "All done!"
           end
         end
@@ -194,8 +194,8 @@ class Menu
       campaign.show_outcome # tallies the votes
       puts
       puts "Simulation has ended."
-      @candidates = Array.new
-      @voters = Array.new
+      @candidates = Array.new # these can be commented out
+      @voters = Array.new     # so names aren't wiped
       sleep(3)
     end
   end
@@ -204,8 +204,8 @@ class Menu
     quit_sim = true
     while quit_sim
       puts <<-END
-      Welcome to the Voter Simulator! How
-      would you like to proceed?
+Welcome to the Voter Simulator! How
+would you like to proceed?
 
       (C)reate, (U)pdate, (L)ist, (V)ote, or (Q)uit?
       Enter only the first letter.
