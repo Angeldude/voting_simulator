@@ -3,8 +3,8 @@ require './campaign'
 
 class Menu
   def initialize
-    @candidates = [] #storing the list of candidates
-    @voters = [] #storing the voters
+    @candidates = Array.new #storing the list of candidates
+    @voters = Array.new #storing the voters
   end
   def create
     candi = false #to determine whether to create a Candidate or Voter
@@ -189,10 +189,13 @@ class Menu
       campaign = Campaign.new(@candidates, @voters)
       campaign.all_stumps # this runs in the campaign class...
       finish = campaign.not_vote # stores voters who were indecisive
+      @candidates = campaign.outcome
       campaign.finish_the_job(finish, @candidates) # all votes are in!
-      campaign.outcome # tallies the votes
+      campaign.show_outcome # tallies the votes
       puts
       puts "Simulation has ended."
+      @candidates = Array.new
+      @voters = Array.new
       sleep(3)
     end
   end

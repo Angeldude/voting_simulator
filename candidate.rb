@@ -10,7 +10,7 @@ class Candidate < Voter
   end
   def listen(candidate)
     # candidates always talk down other candidates
-    puts "#{name}: #{candidate.name} is pure trash!"
+    puts "Candidate #{name}: #{candidate.name} is pure trash!"
     puts
   end
 

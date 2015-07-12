@@ -1,11 +1,11 @@
 class Campaign
-  attr_reader :voters
+  attr_reader :voters, :outcome
 
   def initialize(candidates, voters)
-    @candidates = candidates
-    @notvote = []
+    @politicians = candidates
+    @notvote = Array.new
     @voters = voters
-    @outcome = []
+    @outcome = Array.new
   end
 
   def not_vote #sends indecisive voters into an array
@@ -28,7 +28,7 @@ class Campaign
   end
 
   # lists the total votes of all candidates
-  def outcome
+  def show_outcome
     5.times do
       puts "CALCULATING VOTES..."
       sleep(1)
@@ -43,7 +43,8 @@ class Campaign
   def all_stumps
     # checks if list is empty, if not runs the platform method...
     while true
-      if @candidates.empty?
+      if @politicians.empty?
+        puts "No more candidates left!"
         puts "All done!"
         puts
         break
@@ -57,22 +58,19 @@ class Campaign
 
   def stump_platform
     # ...which begins the stump speeches!
-    if @candidates.empty?
-      puts "No more candidates left!"
-    else
       puts "Let the speeches begin!"
       sleep(1)
       # removes a candidate and mixes the rest together
-      stumper = @candidates.delete(@candidates.sample)
-      everyone_else = (@candidates + @voters).shuffle
+      stumper = @politicians.delete(@politicians.sample)
+      everyone_else = (@politicians + @voters).shuffle
       puts "#{stumper.name} is speaking!"
-      sleep(2)
+      puts
+      sleep(3)
 
       everyone_else.each do |voter|
         voter.listen(stumper) # every voter/candidate has a listen method...
         sleep(1)
       end
       @outcome.push(stumper)
-    end
   end
 end

@@ -20,6 +20,9 @@ class Voter
         puts "#{name}: Don't think so, I'll go on to the next."
         puts
       end
+    else
+      puts "#{name}: My mind is already made up."
+      puts
     end
   end
 end
