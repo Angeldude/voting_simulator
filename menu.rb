@@ -188,7 +188,8 @@ class Menu
     sleep 5
     puts
   end
-
+  # comment out outcome assignment and finish_the_job to let indecisive voters
+  # not vote.
   def vote # the start of the big bad method
     if @candidates.empty? or @voters.empty?
       puts "No one around to vote!"
@@ -197,11 +198,11 @@ class Menu
       campaign = Campaign.new(@candidates, @voters)
       campaign.all_stumps # this runs in the campaign class...
       finish = campaign.not_vote # stores voters who were indecisive
-      @candidates = campaign.outcome
-      campaign.finish_the_job(finish, @candidates) # all votes are in!
+      # @candidates = campaign.outcome
+      # campaign.finish_the_job(finish, @candidates) # all votes are in!
       campaign.show_outcome # tallies the votes
       puts
-      puts "#{finish.count} voters were indecisive and voted randomly."
+      puts "#{finish.count} voters were indecisive." # and voted randomly."
       puts
       puts "Simulation has ended."
       @candidates = Array.new # these can be commented out...
