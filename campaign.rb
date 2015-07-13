@@ -38,8 +38,7 @@ class Campaign
     end
     puts "\nThe votes are in!"
     @outcome.each do |candidate|
-      puts "#{candidate.name} has #{candidate.vote_counter}"
-      sleep 1
+      top_spacer("#{candidate.name} has #{candidate.vote_counter}", 1)
     end
   end
 
@@ -48,8 +47,7 @@ class Campaign
     while true
       if @politicians.empty?
         puts "No more candidates left!"
-        puts "All done!"
-        puts
+        top_spacer("All done!", 1)
         break
       else
         stump_platform
@@ -61,14 +59,11 @@ class Campaign
 
   def stump_platform
     # ...which begins the stump speeches!
-      puts "Let the speeches begin!"
-      sleep 1
+      top_spacer("Let the speeches begin!", 1)
       # removes a candidate and mixes the rest together
       stumper = @politicians.delete(@politicians.sample)
       everyone_else = (@politicians + @voters).shuffle
-      puts "#{stumper.name} is speaking!"
-      puts
-      sleep 3
+      bottom_spacer("#{stumper.name} is speaking!", 3)
 
       everyone_else.each do |voter|
         voter.listen(stumper) # every voter/candidate has a listen method...

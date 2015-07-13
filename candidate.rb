@@ -10,8 +10,7 @@ class Candidate < Voter
   end
   def listen(candidate)
     # candidates always talk down other candidates
-    puts "Candidate #{name}: #{candidate.name} is pure trash!"
-    puts
+    bottom_spacer("Candidate #{name}: #{candidate.name} is pure trash!", 0)
   end
 
   def stump_speech(voter) # campaign class will call this and interlock with

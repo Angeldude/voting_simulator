@@ -1,5 +1,7 @@
 require './candidate'
 require './campaign'
+require './clear'
+include Clear
 
 class Menu
   def initialize
@@ -41,14 +43,10 @@ class Menu
       when "I"
         affiliation = "Independent"
       else
-        puts "Not a valid input."
-        puts
-        sleep 2
+        bottom_spacer("Not a valid input.", 2)
       end
     else
-      puts "Please enter only C or V"
-      puts
-      sleep 2
+      bottom_spacer("Please enter only C or V", 2)
     end
     if name.nil? or affiliation.nil?  #make sure not to add to array
       puts "Nothing was entered."
@@ -104,9 +102,7 @@ class Menu
             when "R"
               party = "Republican"
             else
-              puts "Not valid!"
-              puts
-              sleep 2
+              bottom_spacer("Not valid!", 2)
             end
             candidate.name = new_name unless new_name.eql?("")
             candidate.party = party unless party.nil?
@@ -138,9 +134,7 @@ class Menu
             when "I"
               politics = "Independent"
             else
-              puts "Not valid!"
-              puts
-              sleep 2
+              bottom_spacer("Not valid!", 2)
             end
             voter.name = new_name unless new_name.eql?("")
             voter.politics = politics unless politics.nil?
@@ -148,23 +142,17 @@ class Menu
           end
         end
       else
-        puts "Nope!"
-        puts
-        sleep 2
+        bottom_spacer("Nope!", 2)
       end
     else
-      puts "Not a valid input."
-      puts
-      sleep 2
+      bottom_spacer("Not a valid input.", 2)
     end
   end
 
 
   def list #simple method, iterates through list of people to print to screen
     if @candidates.empty?
-      puts "There are no candidates."
-      puts
-      sleep 3
+      bottom_spacer("There are no candidates.", 3)
     else
       puts "List of candidates are:"
       @candidates.each do |candidate|
@@ -175,9 +163,7 @@ class Menu
     puts
 
     if @voters.empty?
-      puts "There are no voters."
-      puts
-      sleep 3
+      bottom_spacer("There are no voters.", 3)
     else
       puts "List of voters are:"
       @voters.each do |voter|
@@ -201,9 +187,7 @@ class Menu
       # @candidates = campaign.outcome
       # campaign.finish_the_job(finish, @candidates) # all votes are in!
       campaign.show_outcome # tallies the votes
-      puts
-      puts "#{finish.count} voter(s) were indecisive." # and voted randomly."
-      puts
+      top_spacer("#{finish.count} voter(s) were indecisive.",0) # and voted randomly."
       puts "Simulation has ended."
       @candidates = Array.new # these can be commented out...
       @voters = Array.new     # ...so names aren't wiped
@@ -221,9 +205,7 @@ would you like to proceed?
       (C)reate, (U)pdate, (L)ist, (V)ote, or (Q)uit?
       Enter only the first letter.
       END
-      10.times do
-        puts
-      end
+      clear_screen
       # user options for the simulation
       case gets.chomp.upcase
       when "DEBUG" # debug mode, pre-generated list of people
