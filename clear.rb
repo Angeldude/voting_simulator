@@ -7,7 +7,7 @@ module Clear
   end
 
   def top_spacer(text, sleeper)
-    puts "#{text}"
+    puts text
     puts
     sleep sleeper
   end
