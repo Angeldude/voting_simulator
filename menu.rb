@@ -169,7 +169,7 @@ class Menu
       puts "List of candidates are:"
       @candidates.each do |candidate|
         puts "#{candidate.name}, party: #{candidate.party}"
-        sleep 3
+        sleep 1
       end
     end
     puts
@@ -177,18 +177,20 @@ class Menu
     if @voters.empty?
       puts "There are no voters."
       puts
-      sleep 2
+      sleep 3
     else
       puts "List of voters are:"
       @voters.each do |voter|
         puts "#{voter.name}, affiliation: #{voter.politics}"
-        sleep 3
+        sleep 1
       end
     end
     sleep 5
     puts
   end
 
+  # uncomment finish_the_job method to get indecisive voters to vote
+  # then comment out the statement counting indecisive voters.
   def vote # the start of the big bad method
     if @candidates.empty? or @voters.empty?
       puts "No one around to vote!"
@@ -198,12 +200,14 @@ class Menu
       campaign.all_stumps # this runs in the campaign class...
       finish = campaign.not_vote # stores voters who were indecisive
       @candidates = campaign.outcome
-      campaign.finish_the_job(finish, @candidates) # all votes are in!
+      # campaign.finish_the_job(finish, @candidates) # all votes are in!
       campaign.show_outcome # tallies the votes
       puts
+      puts "#{finish.count} voters were indecisive"
+      puts
       puts "Simulation has ended."
-      @candidates = Array.new # these can be commented out
-      @voters = Array.new     # so names aren't wiped
+      @candidates = Array.new # these can be commented out...
+      @voters = Array.new     # ...so names aren't wiped
       sleep 3
     end
   end
