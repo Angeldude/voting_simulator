@@ -29,9 +29,12 @@ class Campaign
 
   # lists the total votes of all candidates
   def show_outcome
+    msg = "CALCULATING VOTES..."
     5.times do
-      puts "CALCULATING VOTES..."
-      sleep 1
+      print "\r#{ msg }"
+      sleep 0.5
+      print "\r#{ ' ' * msg.size }"
+      sleep 0.5
     end
     puts "The votes are in!"
     @outcome.each do |candidate|
