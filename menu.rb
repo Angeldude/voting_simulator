@@ -108,7 +108,7 @@ class Menu
               puts
               sleep 2
             end
-            candidate.name = new_name unless new_name.eql("")
+            candidate.name = new_name unless new_name.eql?("")
             candidate.party = party unless party.nil?
             puts "All done!"
             sleep 2
@@ -225,13 +225,8 @@ would you like to proceed?
       case gets.chomp.upcase
       when "DEBUG" # debug mode, pre-generated list of people
         @candidates = [
-          Candidate.new("Chris", "Republican"),
-          Candidate.new("Alec", "Democrat"),
-          Candidate.new("Robert", "Democrat"),
-          Candidate.new("Paul", "Democrat"),
-          Candidate.new("Adam", "Republican"),
-          Candidate.new("Juan", "Republican"),
-          Candidate.new("Juvenal", "Democrat")
+          Candidate.new("Damon Davison", "Republican"),
+          Candidate.new("Ed Toro", "Democrat"),
         ]
         @voters = [
           Voter.new("Ravi", "Libertarian"),
