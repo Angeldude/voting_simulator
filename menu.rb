@@ -189,7 +189,7 @@ class Menu
     puts
   end
 
-  # uncomment finish_the_job method to get indecisive voters to vote
+  # uncomment finish_the_job method and outcome assignment to get indecisive voters to vote
   # then comment out the statement counting indecisive voters.
   def vote # the start of the big bad method
     if @candidates.empty? or @voters.empty?
@@ -199,7 +199,7 @@ class Menu
       campaign = Campaign.new(@candidates, @voters)
       campaign.all_stumps # this runs in the campaign class...
       finish = campaign.not_vote # stores voters who were indecisive
-      @candidates = campaign.outcome
+      # @candidates = campaign.outcome
       # campaign.finish_the_job(finish, @candidates) # all votes are in!
       campaign.show_outcome # tallies the votes
       puts
