@@ -202,7 +202,7 @@ class Menu
       # campaign.finish_the_job(finish, @candidates) # all votes are in!
       campaign.show_outcome # tallies the votes
       puts
-      puts "#{finish.count} voters were indecisive." # and voted randomly."
+      puts "#{finish.count} voter(s) were indecisive." # and voted randomly."
       puts
       puts "Simulation has ended."
       @candidates = Array.new # these can be commented out...
@@ -237,7 +237,15 @@ would you like to proceed?
           Voter.new("Stevie", "Independent"),
           Voter.new("Joann", "Conservative"),
           Voter.new("Mashon", "Massachusetts Democrat"),
-          Voter.new("Patrick", "Libertarian")
+          Voter.new("Patrick", "Libertarian"),
+          Voter.new("Juvenal", "Conservative"),
+          Voter.new("Paul", "Independent"),
+          Voter.new("Alec", "Massachusetts Democrat"),
+          Voter.new("Jose", "Libertarian"),
+          Voter.new("Robert","Progressive"),
+          Voter.new("Chris", "Progressive"),
+          Voter.new("Adam", "Independent"),
+          Voter.new("Juan","Massachusetts Democrat")
         ]
       when "C"
         create

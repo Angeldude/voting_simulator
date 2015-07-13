@@ -36,7 +36,7 @@ class Campaign
       print "\r#{ ' ' * msg.size }"
       sleep 0.5
     end
-    puts "The votes are in!"
+    puts "\nThe votes are in!"
     @outcome.each do |candidate|
       puts "#{candidate.name} has #{candidate.vote_counter}"
       sleep 1
